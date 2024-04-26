@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "githubmanager"
 include(":app")
- 
+include(":feature_search_repo_by_user")
+include(":feature_search_repo_by_user:presentation")

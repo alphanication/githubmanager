@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/searchRepoByUser"
         android:icon="@drawable/ic_repo_search"
         android:title="" />
 
     <item
-        android:id="@+id/downloadsRepo"
         android:icon="@drawable/ic_repo_download"
         android:title="" />
 </menu>
