@@ -1,12 +1,17 @@
 [versions]
 
+# SDK
+minSdk = "23"
+targetSdk = "34"
+compileSdk = "34"
+
 # BASE
 android_application_version = "8.2.1"
 core_ktx_version = "1.13.0"
 
 # KOTLIN
 kotlin_version = "1.9.22"
-kotlin_coroutine_version = '1.7.1'
+kotlin_coroutine_version = "1.7.1"
 
 # SCREENS
 activity_version = "1.9.0"
@@ -72,5 +77,4 @@ material = ["androidx-material", "androidx-appcompat", "androidx-constraint", "a
 jetpack-activity = ["androidx-activity", "androidx-fragment"]
 navigation = ["androidx-navigation-ui", "androidx-navigation-fragment"]
 network = ["network-retrofit", "network-okhttp", "network-okhttp-logging"]
-room = ["storage-room", "storage-room-ktx", "storage-room-compiler"]
 viewmodel = ["kotlin-coroutines-android", "androidx-viewmodel", "lifecycle-extensions", "lifecycle-runtime-ktx"]
