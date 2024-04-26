@@ -17,3 +17,5 @@ rootProject.name = "githubmanager"
 include(":app")
 include(":feature_search_repo_by_user")
 include(":feature_search_repo_by_user:presentation")
+include(":feature_downloads_repo")
+include(":feature_downloads_repo:presentation")
