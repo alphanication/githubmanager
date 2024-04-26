@@ -9,8 +9,12 @@ compileSdk = "34"
 android_application_version = "8.2.1"
 core_ktx_version = "1.13.0"
 
+# DAGGER
+dagger_hilt_version = "2.42"
+
 # KOTLIN
 kotlin_version = "1.9.22"
+kotlin_kapt_version = "1.8.0"
 kotlin_coroutine_version = "1.7.1"
 
 # SCREENS
@@ -52,6 +56,9 @@ storage-room = { group = "androidx.room", name = "room-runtime", version.ref = "
 storage-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
 storage-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
 
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger_hilt_version" }
+dagger-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger_hilt_version" }
+
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core_ktx_version" }
 androidx-material = { group = "com.google.android.material", name = "material", version.ref = "material_version" }
 androidx-constraint = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint_layout_version" }
@@ -70,11 +77,13 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "android_application_version" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin_version" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin_version" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin_kapt_version" }
+dagger = { id = "com.google.dagger.hilt.android", version.ref = "dagger_hilt_version" }
 
 [bundles]
 material = ["androidx-material", "androidx-appcompat", "androidx-constraint", "androidx-cardview", "androidx-databinding", "androidx-recyclerview"]
-jetpack-activity = ["androidx-activity", "androidx-fragment"]
+screens = ["androidx-activity", "androidx-fragment"]
 navigation = ["androidx-navigation-ui", "androidx-navigation-fragment"]
 network = ["network-retrofit", "network-okhttp", "network-okhttp-logging"]
-viewmodel = ["kotlin-coroutines-android", "androidx-viewmodel", "lifecycle-extensions", "lifecycle-runtime-ktx"]
+viewmodel = ["androidx-viewmodel", "lifecycle-extensions", "lifecycle-runtime-ktx"]

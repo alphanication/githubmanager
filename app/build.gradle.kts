@@ -1,7 +1,8 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger)
 }
 
 android {
@@ -42,8 +43,13 @@ android {
 
 dependencies {
 
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.compiler)
+
     implementation(libs.bundles.material)
-    implementation(libs.bundles.jetpack.activity)
+    implementation(libs.bundles.screens)
     implementation(libs.bundles.navigation)
+
     implementation(libs.bundles.viewmodel)
+    implementation(libs.kotlin.coroutines.android)
 }
