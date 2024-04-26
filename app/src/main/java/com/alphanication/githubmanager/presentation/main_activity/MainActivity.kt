@@ -1,10 +1,7 @@
-package com.alphanication.githubmanager.ui.main_activity
+package com.alphanication.githubmanager.presentation.main_activity
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.alphanication.githubmanager.R
 import com.alphanication.githubmanager.databinding.MainActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 
