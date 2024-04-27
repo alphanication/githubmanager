@@ -42,9 +42,13 @@ lifecycle_ktx_version = "2.7.0"
 retrofit_version = "2.9.0"
 okhttp_version = "4.10.0"
 okhttp_interceptor_version = "4.9.3"
+gson_version = "2.10.1"
 
 # DATA STORAGE
 room_version = "2.6.1"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
 
 [libraries]
 kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin_coroutine_version" }
@@ -52,6 +56,7 @@ kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-c
 network-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit_version" }
 network-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp_version" }
 network-okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp_interceptor_version" }
+network-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson_version" }
 
 storage-room = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
 storage-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
@@ -75,6 +80,9 @@ androidx-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel
 
 lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycle_extensions_version" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_ktx_version" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "android_application_version" }
@@ -88,5 +96,5 @@ dagger = { id = "com.google.dagger.hilt.android", version.ref = "dagger_hilt_ver
 material = ["androidx-material", "androidx-appcompat", "androidx-constraint", "androidx-cardview", "androidx-databinding", "androidx-recyclerview"]
 screens = ["androidx-activity", "androidx-fragment"]
 navigation = ["androidx-navigation-ui", "androidx-navigation-fragment"]
-network = ["network-retrofit", "network-okhttp", "network-okhttp-logging"]
+network = ["network-retrofit", "network-okhttp", "network-okhttp-logging", "network-gson"]
 viewmodel = ["androidx-viewmodel", "lifecycle-extensions", "lifecycle-runtime-ktx"]
