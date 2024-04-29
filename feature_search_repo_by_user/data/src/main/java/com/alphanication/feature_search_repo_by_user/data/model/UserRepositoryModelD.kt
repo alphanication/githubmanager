@@ -24,47 +24,47 @@ private const val ARCHIVED = "archived"
 private const val DISABLED = "disabled"
 private const val TOPICS = "topics"
 
-data class UserRepositoryModel(
+data class UserRepositoryModelD(
     @SerializedName(ID)
-    val id: Int,
+    val id: Int?,
     @SerializedName(NODE_ID)
-    val nodeId: String,
+    val nodeId: String?,
     @SerializedName(NAME)
-    val name: String,
+    val name: String?,
     @SerializedName(FULL_NAME)
-    val fullName: String,
+    val fullName: String?,
     @SerializedName(PRIVATE)
-    val private: Boolean,
+    val private: Boolean?,
     @SerializedName(OWNER)
-    val owner: UserRepositoryModelOwner,
+    val owner: UserRepositoryModelOwnerD?,
     @SerializedName(HTML_URL)
-    val htmlUrl: String,
+    val htmlUrl: String?,
     @SerializedName(DESCRIPTION)
-    val description: String,
+    val description: String?,
     @SerializedName(FORK)
-    val fork: Boolean,
+    val fork: Boolean?,
     @SerializedName(CREATED_AT)
-    val createdAt: String,
+    val createdAt: String?,
     @SerializedName(UPDATED_AT)
-    val updatedAt: String,
+    val updatedAt: String?,
     @SerializedName(PUSHED_AT)
-    val pushedAt: String,
+    val pushedAt: String?,
     @SerializedName(CLONE_URL)
-    val cloneUrl: String,
+    val cloneUrl: String?,
     @SerializedName(SIZE)
-    val size: Int,
+    val size: Int?,
     @SerializedName(STARGAZERS_COUNT)
-    val stargazersCount: Int,
+    val stargazersCount: Int?,
     @SerializedName(WATCHERS_COUNT)
-    val watchersCount: Int,
+    val watchersCount: Int?,
     @SerializedName(LANGUAGE)
-    val language: String,
+    val language: String?,
     @SerializedName(FORKS_COUNT)
-    val forksCount: Int,
+    val forksCount: Int?,
     @SerializedName(ARCHIVED)
-    val archived: Boolean,
+    val archived: Boolean?,
     @SerializedName(DISABLED)
-    val disabled: Boolean,
+    val disabled: Boolean?,
     @SerializedName(TOPICS)
-    val topics: List<String>
+    val topics: List<String>?
 )

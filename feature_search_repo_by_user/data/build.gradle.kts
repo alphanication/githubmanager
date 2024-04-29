@@ -37,6 +37,9 @@ android {
 
 dependencies {
 
+    implementation(project(":core:data"))
+    implementation(project(":feature_search_repo_by_user:domain"))
+
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)
 
