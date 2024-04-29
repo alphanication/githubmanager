@@ -1,4 +1,4 @@
-package com.alphanication.feature_search_repo_by_user.data.service.remote
+package com.alphanication.feature_search_repo_by_user.data.service
 
 import com.alphanication.feature_search_repo_by_user.data.model.UserRepositoryModel
 import com.alphanication.feature_search_repo_by_user.data.utils.GitHubRemoteServiceConstants.GET_REPO_BY_USERNAME
