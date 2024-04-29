@@ -1,15 +1,17 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger)
 }
 
 android {
     namespace = "com.alphanication.core.presentation"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 23
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,10 +37,13 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.compiler)
+
+    implementation(libs.bundles.material)
+    implementation(libs.bundles.screens)
+    implementation(libs.bundles.navigation)
+
+    implementation(libs.bundles.viewmodel)
+    implementation(libs.kotlin.coroutines.android)
 }

@@ -46,9 +46,6 @@ gson_version = "2.10.1"
 
 # DATA STORAGE
 room_version = "2.6.1"
-junit = "4.13.2"
-androidx-test-ext-junit = "1.1.5"
-espresso-core = "3.5.1"
 
 [libraries]
 kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin_coroutine_version" }
@@ -80,9 +77,6 @@ androidx-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel
 
 lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycle_extensions_version" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_ktx_version" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "android_application_version" }
