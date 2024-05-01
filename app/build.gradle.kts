@@ -45,6 +45,7 @@ dependencies {
 
     implementation(project(":feature_search_repo_by_user:presentation"))
     implementation(project(":feature_downloads_repo:presentation"))
+    implementation(project(":feature_search_repo_by_user:di"))
 
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)

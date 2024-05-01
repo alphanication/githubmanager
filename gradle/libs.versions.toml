@@ -49,6 +49,7 @@ room_version = "2.6.1"
 
 [libraries]
 kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin_coroutine_version" }
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin_coroutine_version" }
 
 network-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit_version" }
 network-retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit_version" }

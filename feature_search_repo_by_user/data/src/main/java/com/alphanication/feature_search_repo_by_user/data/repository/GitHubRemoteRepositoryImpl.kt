@@ -7,7 +7,7 @@ import com.alphanication.feature_search_repo_by_user.domain.model.UserRepository
 import com.alphanication.feature_search_repo_by_user.domain.repository.GitHubRemoteRepository
 import javax.inject.Inject
 
-class GitHubRemoteRepositoryImpl @Inject constructor(
+class GitHubRemoteRepositoryImpl(
     private val gitHubRemoteDataSource: GitHubRemoteDataSource,
 ) : GitHubRemoteRepository {
 

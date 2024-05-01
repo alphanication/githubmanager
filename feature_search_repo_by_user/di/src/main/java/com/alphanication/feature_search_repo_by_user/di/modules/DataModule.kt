@@ -20,21 +20,20 @@ private const val DEFAULT_HTTP_REQUEST_TIMEOUT = 5L
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataModule {
+internal object DataModule {
 
     private fun createRetrofitClient(
         baseUrl: String, okHttpClient: OkHttpClient, gson: Gson,
     ): Retrofit = Retrofit.Builder().client(okHttpClient).baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create(gson)).build()
 
-    private fun provideOkHttpClient(
-    ): OkHttpClient = OkHttpClient.Builder()
+    private fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
         .connectTimeout(DEFAULT_HTTP_REQUEST_TIMEOUT, TimeUnit.MINUTES)
         .writeTimeout(DEFAULT_HTTP_REQUEST_TIMEOUT, TimeUnit.MINUTES)
         .readTimeout(DEFAULT_HTTP_REQUEST_TIMEOUT, TimeUnit.MINUTES)
         .addInterceptor(
             HttpLoggingInterceptor().setLevel(
-                HttpLoggingInterceptor.Level.BASIC
+                HttpLoggingInterceptor.Level.BODY
             )
         ).build()
 
