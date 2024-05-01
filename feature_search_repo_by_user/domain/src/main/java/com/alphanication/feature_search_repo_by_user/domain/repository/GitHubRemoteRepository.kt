@@ -5,5 +5,5 @@ import com.alphanication.feature_search_repo_by_user.domain.model.UserRepository
 
 interface GitHubRemoteRepository {
 
-    fun getReposByUsername(username: String): ResultModel<List<UserRepositoryModel>>
+    suspend fun getReposByUsername(username: String): ResultModel<List<UserRepositoryModel>>
 }

@@ -23,9 +23,9 @@ abstract class BaseDataSource {
                     }.getOrNull()
                     ResultModel.error(
                         AnotherError(
-                            response.message(),
-                            response.code(),
-                            errorCodeModel?.errorCode
+                            messageError = response.message(),
+                            statusCode = response.code(),
+                            errorCode = errorCodeModel?.errorCode
                         )
                     )
                 }
