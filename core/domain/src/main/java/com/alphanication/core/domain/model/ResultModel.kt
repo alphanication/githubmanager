@@ -1,4 +1,4 @@
-package com.alphanication.core.data.model
+package com.alphanication.core.domain.model
 
 import java.io.IOException
 

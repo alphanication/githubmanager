@@ -10,7 +10,7 @@ import retrofit2.http.Path
 interface GitHubRemoteService {
 
     @GET(GET_REPO_BY_USERNAME)
-    fun getReposByUsername(
+    suspend fun getReposByUsername(
         @Path(GET_REPO_BY_USERNAME_PATH_USER) username: String
     ): Response<List<UserRepositoryModelD>>
 

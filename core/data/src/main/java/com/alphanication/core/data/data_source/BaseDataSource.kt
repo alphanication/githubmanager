@@ -1,7 +1,7 @@
 package com.alphanication.core.data.data_source
 
-import com.alphanication.core.data.model.AnotherError
-import com.alphanication.core.data.model.ResultModel
+import com.alphanication.core.domain.model.AnotherError
+import com.alphanication.core.domain.model.ResultModel
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import retrofit2.HttpException

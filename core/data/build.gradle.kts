@@ -37,6 +37,8 @@ android {
 
 dependencies {
 
+    implementation(project(":core:domain"))
+
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)
 

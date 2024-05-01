@@ -1,4 +1,4 @@
-@Suppress("DSL_SCOPE_VIOLATION")
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlin.android)
@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.alphanication.feature_search_repo_by_user.data"
+    namespace = "com.alphanication.feature_search_repo_by_user.di"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -37,13 +37,12 @@ android {
 
 dependencies {
 
-    implementation(project(":core:domain"))
-    implementation(project(":core:data"))
+    implementation(project(":feature_search_repo_by_user:data"))
     implementation(project(":feature_search_repo_by_user:domain"))
+    implementation(project(":feature_search_repo_by_user:presentation"))
 
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)
 
     implementation(libs.bundles.network)
-    implementation(libs.kotlin.coroutines.android)
 }
