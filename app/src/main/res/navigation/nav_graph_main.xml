@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/searchRepoByUserFragment"
-        android:name="com.alphanication.feature_search_repo_by_user.presentation.search_repo_by_user.SearchRepoByUserFragment"
+        android:name="com.alphanication.feature_search_repo_by_user.presentation.search_repo_by_user.view.SearchRepoByUserFragment"
         android:label="SearchRepoByUserFragment" />
 
     <fragment
