@@ -1,12 +1,22 @@
 [versions]
 
+# SDK
+minSdk = "23"
+targetSdk = "34"
+compileSdk = "34"
+
 # BASE
 android_application_version = "8.2.1"
 core_ktx_version = "1.13.0"
 
+# DAGGER
+dagger_hilt_version = "2.48"
+
 # KOTLIN
-kotlin_version = "1.9.22"
-kotlin_coroutine_version = '1.7.1'
+kotlin_jvm_version = "1.9.22"
+kotlin_version ="1.9.22"
+kotlin_kapt_version = "1.8.0"
+kotlin_coroutine_version = "1.7.1"
 
 # SCREENS
 activity_version = "1.9.0"
@@ -32,20 +42,27 @@ lifecycle_ktx_version = "2.7.0"
 retrofit_version = "2.9.0"
 okhttp_version = "4.10.0"
 okhttp_interceptor_version = "4.9.3"
+gson_version = "2.10.1"
 
 # DATA STORAGE
 room_version = "2.6.1"
 
 [libraries]
 kotlin-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin_coroutine_version" }
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin_coroutine_version" }
 
 network-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit_version" }
+network-retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit_version" }
 network-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp_version" }
 network-okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp_interceptor_version" }
+network-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson_version" }
 
 storage-room = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
 storage-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
 storage-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
+
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger_hilt_version" }
+dagger-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger_hilt_version" }
 
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core_ktx_version" }
 androidx-material = { group = "com.google.android.material", name = "material", version.ref = "material_version" }
@@ -65,12 +82,16 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "android_application_version" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin_version" }
+androidLibrary = { id = "com.android.library", version.ref = "android_application_version" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin_version" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin_kapt_version" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_jvm_version" }
+dagger = { id = "com.google.dagger.hilt.android", version.ref = "dagger_hilt_version" }
 
 [bundles]
 material = ["androidx-material", "androidx-appcompat", "androidx-constraint", "androidx-cardview", "androidx-databinding", "androidx-recyclerview"]
-jetpack-activity = ["androidx-activity", "androidx-fragment"]
+screens = ["androidx-activity", "androidx-fragment"]
 navigation = ["androidx-navigation-ui", "androidx-navigation-fragment"]
-network = ["network-retrofit", "network-okhttp", "network-okhttp-logging"]
-room = ["storage-room", "storage-room-ktx", "storage-room-compiler"]
-viewmodel = ["kotlin-coroutines-android", "androidx-viewmodel", "lifecycle-extensions", "lifecycle-runtime-ktx"]
+network = ["network-retrofit", "network-retrofit-converter", "network-okhttp", "network-okhttp-logging", "network-gson"]
+viewmodel = ["androidx-viewmodel", "lifecycle-extensions", "lifecycle-runtime-ktx"]
+coroutines = ["kotlin-coroutines-android", "kotlin-coroutines-core"]

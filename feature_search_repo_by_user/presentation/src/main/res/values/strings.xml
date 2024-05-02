@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_by_user_edittext_username">Username…</string>
+    <string name="search_by_user_edittext_username_help">Enter the username of the user whose repositories you want to display</string>
+    <string name="search_by_user_repository_updated_x_days_ago">Updated %s days ago</string>
+    <string name="search_by_user_repository_no_description">There is no description to the repository :(</string>
+    <string name="search_by_user_repositories_is_empty">Repositories is empty :(</string>
+</resources>

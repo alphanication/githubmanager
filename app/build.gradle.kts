@@ -1,21 +1,26 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger)
 }
 
 android {
     namespace = "com.alphanication.githubmanager"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.alphanication.githubmanager"
-        minSdk = 23
-        targetSdk = 34
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    viewBinding {
+        enable = true
     }
 
     buildTypes {
@@ -38,11 +43,17 @@ android {
 
 dependencies {
 
+    implementation(project(":feature_search_repo_by_user:presentation"))
+    implementation(project(":feature_downloads_repo:presentation"))
+    implementation(project(":feature_search_repo_by_user:di"))
+
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.compiler)
+
     implementation(libs.bundles.material)
-    implementation(libs.bundles.material)
-    implementation(libs.bundles.jetpack.activity)
+    implementation(libs.bundles.screens)
     implementation(libs.bundles.navigation)
-    implementation(libs.bundles.network)
-    implementation(libs.bundles.room)
+
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.viewmodel)
 }

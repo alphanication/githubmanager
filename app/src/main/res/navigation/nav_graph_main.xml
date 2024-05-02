@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/searchRepoByUserFragment">
+
+    <fragment
+        android:id="@+id/searchRepoByUserFragment"
+        android:name="com.alphanication.feature_search_repo_by_user.presentation.search_repo_by_user.view.SearchRepoByUserFragment"
+        android:label="SearchRepoByUserFragment" />
+
+    <fragment
+        android:id="@+id/downloadsRepoFragment"
+        android:name="com.alphanicationfeature_downloads_repo.presentation.downloads_repo.DownloadsRepoFragment"
+        android:label="DownloadsRepoFragment" />
+</navigation>
