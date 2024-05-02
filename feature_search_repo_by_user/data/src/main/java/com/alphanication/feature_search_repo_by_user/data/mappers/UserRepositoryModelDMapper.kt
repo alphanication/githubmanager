@@ -19,7 +19,7 @@ internal class UserRepositoryModelDMapper : MapperData<UserRepositoryModelD, Use
                     type.owner ?: throw NullPointerException("owner is null")
                 ) ?: throw NullPointerException("owner is null"),
                 htmlUrl = type.htmlUrl ?: throw NullPointerException("htmlUrl is null"),
-                description = type.description ?: EMPTY_STRING,
+                description = type.description,
                 fork = type.fork ?: false,
                 createdAt = type.createdAt ?: throw NullPointerException("createdAt is null"),
                 updatedAt = type.updatedAt ?: EMPTY_STRING,

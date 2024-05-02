@@ -8,7 +8,7 @@ data class UserRepositoryModel(
     val private: Boolean,
     val owner: UserRepositoryModelOwner,
     val htmlUrl: String,
-    val description: String,
+    val description: String?,
     val fork: Boolean,
     val createdAt: String,
     val updatedAt: String,
