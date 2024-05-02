@@ -37,8 +37,9 @@ dependencies {
 
     implementation(project(":core:domain"))
     implementation(project(":core:data"))
+
     implementation(project(":feature_search_repo_by_user:domain"))
 
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
-    implementation(libs.kotlin.coroutines.android)
 }

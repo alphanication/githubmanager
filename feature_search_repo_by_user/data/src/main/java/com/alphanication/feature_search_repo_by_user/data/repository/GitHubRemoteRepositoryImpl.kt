@@ -5,7 +5,6 @@ import com.alphanication.feature_search_repo_by_user.data.data_source.interfaces
 import com.alphanication.feature_search_repo_by_user.data.mappers.UserRepositoryModelDMapper
 import com.alphanication.feature_search_repo_by_user.domain.model.UserRepositoryModel
 import com.alphanication.feature_search_repo_by_user.domain.repository.GitHubRemoteRepository
-import javax.inject.Inject
 
 class GitHubRemoteRepositoryImpl(
     private val gitHubRemoteDataSource: GitHubRemoteDataSource,
@@ -13,10 +12,9 @@ class GitHubRemoteRepositoryImpl(
 
     override suspend fun getReposByUsername(username: String): ResultModel<List<UserRepositoryModel>> {
         val response = gitHubRemoteDataSource.getReposByUsername(username = username)
-        return ResultModel(
-            status = response.status,
-            data = response.data?.map { model -> UserRepositoryModelDMapper().mapFromEntity(model) },
-            errorThrowable = response.errorThrowable
-        )
+        return ResultModel(status = response.status,
+            data = response.data?.map { model -> UserRepositoryModelDMapper().mapFromEntity(model) }
+                ?.filterNotNull() ?: listOf(),
+            errorThrowable = response.errorThrowable)
     }
 }

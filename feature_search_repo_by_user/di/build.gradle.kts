@@ -1,4 +1,4 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlin.android)
@@ -37,6 +37,9 @@ android {
 
 dependencies {
 
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+
     implementation(project(":feature_search_repo_by_user:data"))
     implementation(project(":feature_search_repo_by_user:domain"))
     implementation(project(":feature_search_repo_by_user:presentation"))
@@ -44,5 +47,6 @@ dependencies {
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)
 
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
 }

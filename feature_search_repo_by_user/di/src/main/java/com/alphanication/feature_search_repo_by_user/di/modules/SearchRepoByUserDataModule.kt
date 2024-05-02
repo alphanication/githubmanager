@@ -20,7 +20,7 @@ private const val DEFAULT_HTTP_REQUEST_TIMEOUT = 5L
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object DataModule {
+internal object SearchRepoByUserDataModule {
 
     private fun createRetrofitClient(
         baseUrl: String, okHttpClient: OkHttpClient, gson: Gson,

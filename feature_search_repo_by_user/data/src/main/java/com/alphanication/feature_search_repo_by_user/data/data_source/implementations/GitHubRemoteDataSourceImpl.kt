@@ -5,9 +5,8 @@ import com.alphanication.core.domain.model.ResultModel
 import com.alphanication.feature_search_repo_by_user.data.data_source.interfaces.GitHubRemoteDataSource
 import com.alphanication.feature_search_repo_by_user.data.model.UserRepositoryModelD
 import com.alphanication.feature_search_repo_by_user.data.service.GitHubRemoteService
-import javax.inject.Inject
 
-class GitHubRemoteDataSourceImpl @Inject constructor(
+class GitHubRemoteDataSourceImpl(
     private val gitHubRemoteService: GitHubRemoteService,
 ) : BaseDataSource(), GitHubRemoteDataSource {
 

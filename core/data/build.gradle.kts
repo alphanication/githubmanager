@@ -42,6 +42,9 @@ dependencies {
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.compiler)
 
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.extensions)
+
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
-    implementation(libs.kotlin.coroutines.android)
 }

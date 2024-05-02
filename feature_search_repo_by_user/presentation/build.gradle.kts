@@ -43,6 +43,7 @@ dependencies {
 
     implementation(project(":core:presentation"))
     implementation(project(":core:domain"))
+
     implementation(project(":feature_search_repo_by_user:domain"))
 
     implementation(libs.dagger.hilt)
@@ -52,6 +53,6 @@ dependencies {
     implementation(libs.bundles.screens)
     implementation(libs.bundles.navigation)
 
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.viewmodel)
-    implementation(libs.kotlin.coroutines.android)
 }

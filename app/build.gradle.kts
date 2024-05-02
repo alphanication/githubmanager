@@ -54,6 +54,6 @@ dependencies {
     implementation(libs.bundles.screens)
     implementation(libs.bundles.navigation)
 
+    implementation(libs.bundles.coroutines)
     implementation(libs.bundles.viewmodel)
-    implementation(libs.kotlin.coroutines.android)
 }
